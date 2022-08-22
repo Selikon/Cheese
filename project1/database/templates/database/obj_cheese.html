@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{cheese.название}}
+{% endblock %}
+
+{% block sidebar %}
+<div class="col-md-3">
+  <div class="list-group">
+    {% for i in type %}
+    <a href="{{ i.get_absolute_url }}" class="list-group-item list-group-item-action">{{ i.тип_сыра }}</a>
+    {%endfor%}
+  </div>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+  
+  <div class="card"  style="width: 50rem;"  >
+    
+    <div class="card-body">
+      <h5 class="card-title">Картинка сыра  </h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ cheese.id }} {{cheese.название}}</h6>
+      <p class="card-text">Доступность: {{cheese.доступность_товара}}<br> Тип продукта: {{cheese.id_тип_сыра}}<br> Описание:<br> {{cheese.коментарий}}</p>
+      
+    </div>
+    <br>
+  </div>
+ 
+</div>
+{% endblock %}
+
+
+
+
+
+

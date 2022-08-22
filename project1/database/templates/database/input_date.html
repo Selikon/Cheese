@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Разные сыры 
+{% endblock %}
+
+{% block sidebar %}
+<div class="col-md-3">
+  <div class="list-group">
+    {% for i in type %}
+    <a href="{{ i.get_absolute_url }}" class="list-group-item list-group-item-action">{{ i.тип_сыра }}</a>
+    {%endfor%}
+  </div>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+  {% for i in news %}
+  <div class="card"  style="width: 50rem;"  >
+    
+    <div class="card-body">
+      <h5 class="card-title">Картинка сыра  </h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ i.id }} {{i.название}}</h6>
+      <p class="card-text">Доступность: {{i.доступность_товара}}<br> Тип продукта: {{i.id_тип_сыра}}<br> Описание:<br> {{i.коментарий}}</p>
+      <a href="{{ i.get_absolute_url }}" class="card-link">Подробнее</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <br>
+  </div>
+  {%endfor%} 
+</div>
+{% endblock %}
+
+
+
+
+
+
