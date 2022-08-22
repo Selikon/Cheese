@@ -1,0 +1,6 @@
+py -m pip install Django установка джанги 
+pip install djangorestframework установка rest api
+pip install mysqlclient Установка  настр бд
+pip install mysql   Установка  настр бд
+python manage.py createsuperuser создание супер пользователя 
+
